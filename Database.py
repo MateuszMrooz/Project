@@ -29,10 +29,10 @@ def dbase(Temp,Humidity,Light,Wind):
     #Writing to database
     cursor.execute('''INSERT INTO Arduino(Temperature,Humidity,Light,Wind)VALUES(?,?,?,?)''',(Temp,Humidity,Light,Wind,))
     db.commit()
-    cursor.execute(''' SELECT * FROM Arduino''')
-    
+
     #Reading from database
-    values = cursor.fetchall()[-1]
+    cursor.execute(''' SELECT * FROM Arduino''')
+    values = cursor.fetchall()[-1]#Retrives last value from databse
     print(values) #For testing
     return(values)
     
