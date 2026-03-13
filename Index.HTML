@@ -4,16 +4,19 @@
         <title>My project</title>
         <style>
             body{
-                width: 80%;
+                width: 60%;
                 margin: 0 auto;
             }
-            h1   {color: blue;}
-
+            h1   {color: rgb(71, 44, 63);}
+            h2   {color: rgb(119, 123, 187);}
+            h3   {color:rgb(120, 218, 202)} 
+            p    {color:brown;}
+            li   {color:brown;}
 
 
         </style>
     </head>
-    <body>
+    <body style="background-color:rgb(185, 178, 111);">
     
     <h1>Meeting the brief</h1>
     
@@ -37,46 +40,50 @@
         I decided to use a microbit originally due to its cheap cost and ease of use. This backfired as it proved unreliable with the serial write. Due to this, I swapped to the Arduino uno r4 as it was still easy for me to use while being cheap. I used the DHT11 sensor to give me temperature and humidity data. I used the MONK MAKES sensor board v1g for light intensity. These sensors were made to work with the microbit but they worked with the Arduino as well. 
     </p>
     
-    <h3>Plan and design</h3>
-    <h4>Design objectives:</h4>
-    <p> 
+    <h1>Plan and design</h1>
+    <h2>Design objectives:</h2>
+    <ul>
+    <li> 
         A forest fire prediction and detection system capable of being deployed on a large scale. For this, each device must be small, cheap, and power efficient. 
-    </p>
-    <p>
+    </li>
+    <li>
         It must be able to clearly warn and alert the end user of a fire or a potential fire with an intuitive warning system. 
-    </p>
-    <p>
+    </li>
+    <li>
         It must be adapted to the Irish climate to be able to be based here with the possibility of changing the parameters for other climates. 
-    </p>
-    <p>
+    </li>
+    <li>
         The device should be able to process the data and store it for later use. 
-    </p>
-    
-    <h5>End user needs:</h5>
-    <p>
+    </li>
+    </ul>
+    <h2>End user needs:</h2>
+    <ul>
+    <li>
         Be an asset to fire watchers to help them with fire detection and prevention. 
-    </p>
-    <p>
+    </li>
+    <li>
         Communicate to the user the current fire risk and if there is an ongoing fire through the use of four LEDs. 
-    </p>
-    <p>
+    </li>
+    <li>
         Convey this message to the user through messages corresponding to the current state of the LEDs. 
-    </p>
-    <p>
+    </li>
+    <li>
         Display the data received from the sensors in real time and log it in a database for potential analysis in the future. 
-    </p>
-   
-    <h6>Sensors to be used:</h6>
+    </li>
+   </ul>
 
-    <p>
+    <h2>Sensors to be used:</h2>
+<ol>
+    <li>
          DHT11 Humidity and temperature sensor 
-    </p>
-    <p>
+    </li>
+    <li>
         The light sensor on the MONK MAKES senor board  
-    </p>
-    <p>
+    </li>
+    <li>
         Accelerometer on Microbit for wind speed 
-    </p>
+    </li>
+    </ol>
     <p>
         To find the wind speed, I will use the provided example from the brief for the microbit wind measuring device. With this data, I will find the force required to move the flap by a certain number of degrees. Using this, I will find the wind speed from the Drag formula (Fd = 0.5CdpAv^2). An alternate method to find the wind speed is to use an anemometer such as the kittenbot weather station; however, this would require more sensors (most of which I would not be using), increasing the cost of the overall system. 
     </p>
@@ -93,7 +100,7 @@
         The board I will use for this project is the microbit due to its low power usage, cost, and simplicity. I will code the board in MakeCode and create the data logger from Thonny. 
     </p>
     <p>
-        I will code the data logger using an SQLite database in Python in Thonny.  
+        I will code the data logger using an SQLite3 database in Python in Thonny.  
     </p>
     <p>
         An option to run what-if scenarios will be available for the microbit to simulate a risk or disaster.  
@@ -101,73 +108,198 @@
     <p>
         There will be the ability to reset microbit with the buttons provided on the microbit. This is for ease of use to set up.  Another benefit of this is the ability to reset the microbit in person if it sounds a false alarm. 
     </p>
+    <h2>
+        The Visual Representaion:
+    </h2>
+    <ul>
+        <li>
+                I will create a high-level flowchart and a system architecture diagram to aid in providing a more comprehensive insight into how my project works. 
+        </li>
+    </ul>
+    <h2>
+        Technology and its role:
+    </h2>
+    <ul>
+        <li>
+            Thonny – Easy to use and supports debugging 
+        </li>
+        <li>
+            C++ - LED, Arduino and sensors code 
+        </li>
+        <li>
+            VSCode – Supports HTML and C++  
+        </li>
+        <li>
+            SQLite3 – Database engine that runs on python 
+        </li>
+        <li>
+            HTML – Website creation 
+        </li>
+    </ul>
 
-    <h7>Create</h7>
-    <h8>The Code:</h8>
-    <p>
-        I originally began work on the project in MakeCode for the microbit with the assumption that I would have time for a wind speed/force sensor. The microbit was unable to transfer all the data I needed to fulfil my design objectives reliably. This led me to switch over to an Arduino which I coded in Visual Studio Code. I found the switch not too difficult once I got used to it, but it took a while to do so. 
-    </p>
-    <p>
-        The wind speed sensor was scrapped as an idea due to lack of time. I was planning to buy a weather station kit for the microbit but that proved too costly. I was unable to find a wind speed sensor for sale on its own, so I scrapped the idea. My next idea was to make a wind force sensor, similar to the one provided in the brief. This idea was scrapped again as it required an accelerometer, was large and bulky, and it was more complex as you had to convert wind force into wind speed. The microbit had a built-in accelerometer while the Arduino does not, so it prevented me from using this sensor. For these reasons, I used a potentiometer as a placeholder that was able to vary the values for wind. If I were to implement this product, I would make an anemometer from a small electric motor and 3D printed cups. This would be cost effective and would provide the same output as the potentiometer as they both are analog. This would make my code easily adapted to a sensor like this. 
-    </p>
-    <p>
+    <h1>Create</h1>
+    <h2>The Model:</h2>
+    <ul>
+    <li>
+    I originally began work on the project in MakeCode for the microbit with the assumption that I would have time for a wind speed/force sensor. The microbit was unable to transfer all the data I needed to fulfil my design objectives reliably. This led me to switch over to an Arduino which I coded in Visual Studio Code. I found the switch not too difficult once I got used to it, but it took a while to do so. 
+    </li>
+    <li>
+    I made 5 files in Thonny for my code. The first one was the main code (Arduino 1) and it was where all the data from the Arduino was processed and the sent to each function that required it.    
+    </li>
+    </ul>
+    <h3>
+        The next two were the function files:
+    </h3>
+
+    <ul>
+    <li>
+         The risk file was made up of 3 separate functions. The first found how many of the variables were above the thresholds I had set (Risk_factor, Potential and Fire). The second function was responsible for checking the risk level from the Risk_factor and Potential from the first function. The third function used the Potential and Fire outputs from the first function to check for an ongoing fire. 
+    </li>
+    <li>
+    The first function in the database file was responsible for creating the database upon startup. The next was responsible for reading and writing to and from the database. 
+    </li>
+    <li>
         The Arduino was coded in VSCode in C++. It is responsible for sending the data to Thonny and turning LEDs on or off based off the processed data. The green, yellow and orange LEDs represent low, moderate and high risk of a fire starting respectively. The red LED indicates an ongoing fire. A flashing LED indicates a potential reading. For example, if the green LED is on and the yellow LED is flashing, it shows a potential moderate or a low risk. 
-    </p>
-    <p>
+    </li>
+    <li>
         The data was processed in Thonny. My code took in the raw values for temperature, humidity, wind speed, and light intensity. It stored these values in a database and then used these values to calculate the risk of fire by incrementing a risk factor counter for each of the values when their set threshold is reached. It then wrote these values back to the Arduino which used it for the LEDs. 
-    </p>
+    </li>
+    </ul>
 
-    <h9>The Hardware and Testing</h9>
+    <h2>The Hardware and Testing</h2>
 
-    <p>
+    <ul>
+    <li>
             The Arduino uno was the motherboard of the whole project. It has a digital input for the DTH11 temperature and humidity sensor, 2 analog inputs for the light intensity sensor and potentiometer, and 4 digital outputs for the LEDs. The whole circuit was powered with 3v as all the components required it or ran fine with no data loss or crashes. 
-    </p>
-    <p>
-            I created a truth table with every combination of inputs and their respective outputs. I then tested my risk calculator and fire detection system by making all the input combinations into a list and iterating each of these combinations through my risk calculator and fire detection system. I then compared both values and found that they were in accordance with my truth table. 
-    </p>
-    <p>
-            I created 2 what-if scenarios for drought and stormy conditions. I struggled to find values for these conditions, so they were made up based on reasonable assumptions. It allows you to input which condition and for how long you want to test it, and it will print the risk of fire for each day tested. 
-    </p>
-    <h10>The Visual Representation:</h10>
-    <p>
-            I created a high-level flowchart and a system architecture diagram to aid in providing a more comprehensive insight into how my project works. I colour coded everything in these diagrams to make it even easier to understand, while looking aesthetically pleasing. 
-    </p>
+    </li>
+    <li>
+        I created a truth table with every combination of inputs and their respective outputs. I then tested my risk calculator and fire detection system in the fourth Thonny file (Testing functions) I did this by making all the input combinations into a list and iterating each of these combinations through my risk calculator and fire detection system. I then compared both values and found that they were in accordance with my truth table. 
+    </li>
+    <li>
+        In the last Thonny file I created 2 what-if scenarios for drought and stormy conditions. I struggled to find values for these conditions, so they were made up based on reasonable assumptions. It allows you to input which condition and for how long you want to test it, and it will print the risk of fire for each day tested.     
+    </li>
+   </ul>
 
-    <h11>The Write-Up</h11>
-
-    <p>
-            This was my least favorite part but includes most of the text. I found it annoying to record milestones and explain what I did as I wanted to just keep working on the project. It was especially annoying when I had to redo parts, and I would waste time not only on redoing it, but the write-up as well. 
-    </p>
-
-    <h12>What went wrong:</h12>
-    <p>
+    <h2>What went wrong:</h2>
+    <ul>
+    <li>
             What didn't is a better title, but the part that gave me the most trouble was timing the LEDs to flash on and off. This was due to the delay required for the DHT11 sensor. It stopped me from being able to flash the LEDs by using the delay() function as the DHT11 had to wait 2 seconds to prevent it from crashing. In these 2 seconds it was impossible to communicate with the Arduino to flash the LEDs. 
-    </p>
-    <p>
+    </li>
+    <li>
             The solution was to measure the time using the millis() function for the code responsible for sending the data to Thonny. This allowed me to use the delay() function to flash the risk LEDs, without interfering with the rate of the sensor outputs. 
-    </p>
+    </li>
+    </ul>
 
-    <h13>Milestones:</h13>
+    <h2>Milestones:</h2>
 
+
+    <ol>
+        <li>
+            Started research (03/12/25) 
+        </li>
+        <li>
+            Started Investigation (09/12/25) 
+        </li>
+        <li>
+            Finished Investigation and research (15/12/25) 
+        </li>
+        <li>
+            Started Plan and Design (15/12/25) 
+        </li>
+        <p>
+            All the sensors were decided on and bought in this stage. 
+        </p>
+        <li>
+            Finished Plan and Design (8/1/26) 
+        </li>
+        <li>
+             Created truth table (9/1/26) 
+        </li>
+        <li>
+                Started flowchart and architecture (12/1/26) 
+        </li>
+        <li>
+             Finished flowchart and architecture (17/1/26) 
+        </li>
+        <li>
+            Started working with the Microbit (18/1/26) 
+        </li>
+        <p>
+            After testing the Microbit, it turned out to not be able to reliably send data, so I had to look for an alternative motherboard. 
+        </p>
+        <li>
+            Swapped over to Arduino (30/1/26) 
+        </li>
+        <p>
+            The Arduino took some getting used to
+        </p>
+        <li>
+            Started Thonny code (2/2/26) 
+        </li>
+        <li>
+            Started Create (9/2/26) 
+        </li>
+        <li>
+            Stared LED system in VSCode (2/3/26) 
+        </li>
+        <p>
+            This part was deceptively hard to get to work.  
+        </p>
+        <li>
+            Finished Thonny code (6/3/26) 
+        </li>
+        <li>
+             Tested truth table and what-if scenarios (9/3/26) 
+        </li>
+        <li>
+            Finished LED system (11/3/26) 
+        </li>
+        <p>
+            (Finally)
+        </p>
+        <li>
+            Started website and video (11/3/26) 
+        </li>
+        <li>
+            Finished website and video (12/3/26) 
+        </li>
+        <li>
+            Finishing touches (13/3/26) 
+        </li>
+    </ol>
+
+    <h1>Evaluation:</h1>
     <p>
-    Started project research (03/12/25) 
-
-    Christmas break (19/12/25-5/1/26) 
-
-    Swapped over to Arduino from the Microbit (26/1/26) 
-
-    Mocks and midterm break (3/2/26-2/3/26) 
-
-    Finished all the coding, hardware, and testing by (11/3/26) 
-    </p>
-
-    <h14>Evaluation:</h14>
-    <p>
-        I created a system that can detect wildfires and wildfire risk based on changing environmental conditions. The system is small, lightweight, power efficient, and affordable. This allows it to be deployed on a large scale, which was the main design goal of this project, so I’d say I was successful. 
+        I created a system that can detect wildfires and risk of wildfires based on changing environmental conditions. The system is small, lightweight, power efficient, and affordable. This allows it to be deployed on a large scale, which was the main design goal of this project, so I’d say I was successful. 
     </p>
     <p>
-        I would improve upon this project if I had time by adding more hardware. I would make an anemometer to find wind speed as the device cannot give true wind speed results as of now. Another component I would add is an antenna to send the data into a central database and allow for the readings to be read from a remote location. This would benefit fire watchers by allowing them to remotely monitor a whole forest. 
+        I used Python to successfully read and store data to a SQLite3 database. I then used this data to carry out most of what I included in my plan and design. I failed to include some minor parts such the rate of spread of fire derived from wind speed, and some major parts like the Microbit and accelerometer, but I overall stayed true to the design purpose of what I had set out to achieve with this project. 
     </p>
+    <h2>
+        What I would improve:
+    </h2>
+    <h3>
+        Hardware:
+    </h3>
+    <ul>
+        <li>
+                I would improve upon this project if I had time by adding more hardware.  The microbit had an accelerometer which I was planning to use for the wind force sensor. When I swapped over to the Arduino, I lost this capability. If I had more time, I would have made an anemometer to find wind speed as the device cannot give true wind speed results as of now. 
+        </li>
+        <li>
+                Another component I would add is an antenna to send the data into a central database and allow for the readings to be read from a remote location. This would benefit fire watchers by allowing them to remotely monitor a whole forest. 
+        </li>
+    </ul>
+    <h3>
+        Software:
+    </h3>
+    <ul>
+    <li>
+        If I were to improve upon the software, I would create a web which would allow the devices to act in tandem with each other. This would allow for the system to be easier to use by fire watchers by not having each device running separately. 
+    </li>
+    <li>
+        Lastly, I would create an app or some form of front end that would be more appealing and user friendly instead of using the Thonny console to provide the user the data. 
+    </li>
+    </ul>
     <img src="Flowchart.svg">
 
     </body>
