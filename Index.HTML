@@ -7,16 +7,34 @@
                 width: 60%;
                 margin: 0 auto;
             }
-            h1   {color: rgb(71, 44, 63);}
-            h2   {color: rgb(119, 123, 187);}
-            h3   {color:rgb(120, 218, 202)} 
-            p    {color:brown;}
-            li   {color:brown;}
+            h1   {color: rgb(0, 0, 0);}
+            h2   {color: rgb(0, 0, 0);}
+            h3   {color:rgb(0, 0, 0)} 
+            p    {color:rgb(0, 0, 0);}
+            li   {color:rgb(0, 0, 0);}
+            table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #bce4b4;
+}
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
 
 
         </style>
     </head>
-    <body style="background-color:rgb(185, 178, 111);">
+    <body style="background-color:rgb(119, 199, 219);">
     
     <h1>Meeting the brief</h1>
     
@@ -116,26 +134,37 @@
                 I will create a high-level flowchart and a system architecture diagram to aid in providing a more comprehensive insight into how my project works. 
         </li>
     </ul>
-    <h2>
-        Technology and its role:
-    </h2>
-    <ul>
-        <li>
-            Thonny – Easy to use and supports debugging 
-        </li>
-        <li>
-            C++ - LED, Arduino and sensors code 
-        </li>
-        <li>
-            VSCode – Supports HTML and C++  
-        </li>
-        <li>
-            SQLite3 – Database engine that runs on python 
-        </li>
-        <li>
-            HTML – Website creation 
-        </li>
-    </ul>
+    <table>
+  <tr>
+    <th>Technology</th>
+    <th>Role</th>
+  </tr>
+  <tr>
+    <td>Thonny</td>
+    <td>Easy to use and supports debugging</td>
+
+  </tr>
+  <tr>
+    <td>VSCode</td>
+    <td>Supports HTML and C++</td>
+  </tr>
+  <tr>
+    <td>Python</td>
+    <td>Code used for processing and storing data to database</td>
+  </tr>
+  <tr>
+    <td>C++</td>
+    <td>Arduino is based on C++</td>
+  </tr>
+  <tr>
+    <td>HTML</td>
+    <td>Website creation</td>
+  </tr>
+  <tr>
+    <td>SQLite3</td>
+    <td>Database engine that runs on python</td>
+  </tr>
+</table>
 
     <h1>Create</h1>
     <h2>The Model:</h2>
@@ -268,7 +297,7 @@
         </li>
     </ol>
 
-    <h1>Evaluation:</h1>
+    <h1>Evaluation</h1>
     <p>
         I created a system that can detect wildfires and risk of wildfires based on changing environmental conditions. The system is small, lightweight, power efficient, and affordable. This allows it to be deployed on a large scale, which was the main design goal of this project, so I’d say I was successful. 
     </p>
